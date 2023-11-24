@@ -30,32 +30,34 @@ class NavBarItem extends StatelessWidget {
             width: 50,
             alignment: Alignment.center,
             margin: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 6,
-                ),
-                Text(
-                  text,
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    color: data.value
-                        ? CustomColors.primary
-                        : Colors.white,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 6,
                   ),
-                ),
-                const SizedBox(
-                  height: 6,
-                ),
-                data.value
-                    ? Container(
-                        width: 40,
-                        height: 1,
-                        color: CustomColors.primary,
-                      )
-                    : const SizedBox.shrink()
-              ],
+                  Text(
+                    text,
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: data.value
+                          ? CustomColors.primary
+                          : Colors.white,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  data.value
+                      ? Container(
+                          width: 40,
+                          height: 1,
+                          color: CustomColors.primary,
+                        )
+                      : const SizedBox.shrink()
+                ],
+              ),
             ),
           ),
         );

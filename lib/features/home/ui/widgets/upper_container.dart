@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../../../../util/breakpoints.dart';
 import '../../../../util/custom_colors.dart';
 import 'description.dart';
-import 'khalid_image.dart';
+import 'enos_image.dart';
 
 class UpperContainer extends StatelessWidget {
   final double width;
@@ -27,7 +26,7 @@ class UpperContainer extends StatelessWidget {
                 width: width,
               ),
               const SizedBox(width: 20),
-              KhalidImage(
+              EnosImage(
                 width: width,
               )
             ],
@@ -37,7 +36,7 @@ class UpperContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(width: width * 0.07),
-              KhalidImage(width: (2 * width) - 0.16 * width),
+              EnosImage(width: (2 * width) - 0.16 * width),
               SizedBox(height: 0.05 * width),
               Description(
                 isVertical: true,
@@ -50,7 +49,7 @@ class UpperContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(width: width * 0.07),
-              Center(child: KhalidImage(width: 2 * width)),
+              Center(child: EnosImage(width: 2 * width)),
               SizedBox(height: 0.05 * width),
               Description(isVertical: true, width: width),
             ],

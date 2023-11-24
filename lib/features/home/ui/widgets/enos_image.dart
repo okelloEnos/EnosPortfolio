@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../../util/custom_colors.dart';
 import '../../../../util/image_asset_constants.dart';
 
-class KhalidImage extends StatelessWidget {
+class EnosImage extends StatelessWidget {
   final double width;
-  const KhalidImage({
+  const EnosImage({
     required this.width,
     Key? key,
   }) : super(key: key);
@@ -18,7 +18,7 @@ class KhalidImage extends StatelessWidget {
         Container(
           constraints:const BoxConstraints(maxWidth:370),
           child: Image.asset(
-            ImageAssetConstants.khalid,
+            ImageAssetConstants.enos,
             width: width * 0.29,
             height: width * 0.3,
           ),

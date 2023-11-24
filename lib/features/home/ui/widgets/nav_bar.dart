@@ -1,3 +1,4 @@
+import 'package:enos_portfolio/util/media_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -63,18 +64,18 @@ class NavBar extends StatelessWidget {
           NavBarItemWithIcon(
             text: 'github',
             icon: ImageAssetConstants.github,
-            url: 'https://github.com/khalid-alsaleh-dev',
+            url: MediaConstants.github,
           ),
           SizedBox(width: 10),
           NavBarItemWithIcon(
               text: 'facebook',
               icon: ImageAssetConstants.facebook,
-              url: 'https://www.facebook.com/khalid.alsaleh.52090/'),
+              url: MediaConstants.facebook),
           SizedBox(width: 10),
           NavBarItemWithIcon(
               text: 'linkedIn',
               icon: ImageAssetConstants.linkedIn,
-              url: 'https://www.linkedin.com/in/khalid-al-saleh-3561881a8/'),
+              url: MediaConstants.linkedIn),
           SizedBox(width: 50),
         ])
       ])
@@ -90,7 +91,6 @@ class NavBar extends StatelessWidget {
           text: 'Skills',
           onTap: () {
             scrollToWidgetByKey(skillsKey);
-
             collapsableHeight.value = 0.0;
           }),
       const SizedBox(width: 10),
@@ -103,16 +103,15 @@ class NavBar extends StatelessWidget {
       NavBarItem(
           text: 'github',
           onTap: () async {
-            await launch('https://github.com/khalid-alsaleh-dev');
+            await launch(MediaConstants.github);
           }),
       NavBarItem(
           text: 'facebook',
           onTap: () async =>
-              await launch('https://www.facebook.com/khalid.alsaleh.52090/')),
+              await launch(MediaConstants.facebook)),
       NavBarItem(
           text: 'linkedIn',
-          onTap: () async => await launch(
-              'https://www.linkedin.com/in/khalid-al-saleh-3561881a8/')),
+          onTap: () async => await launch(MediaConstants.linkedIn)),
     ];
     return Stack(
       children: [

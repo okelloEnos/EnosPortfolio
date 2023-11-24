@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../util/breakpoints.dart';
 import '../../../../util/image_asset_constants.dart';
 

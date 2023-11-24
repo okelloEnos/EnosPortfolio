@@ -1,8 +1,8 @@
+import 'package:enos_portfolio/util/media_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-
 import '../../../../util/custom_colors.dart';
 
 class Description extends StatelessWidget {
@@ -22,14 +22,14 @@ class Description extends StatelessWidget {
         children: [
           Container(
               margin: const EdgeInsets.symmetric(horizontal: 10),
-              width: 135,
+              width: 250,
               height: 40,
               alignment: Alignment.center,
               color: CustomColors.primary,
               child: Center(
-                  child: Text('Software Engineer',
+                  child: Text('Mobile Application Developer',
                       style: GoogleFonts.getFont('Days One',
-                          color: Colors.black, fontSize: 10)))),
+                          color: Colors.black, fontSize: 14)))),
           SizedBox(height: 0.015 * width),
           Text('Talk is cheap.',
               style: GoogleFonts.getFont('Delius',
@@ -57,7 +57,7 @@ class Description extends StatelessWidget {
           ),
           InkWell(
             onTap: () async => !await launch(
-                'https://mail.google.com/mail/u/0/?fs=1&to=khalidlionel.2089@gmail.com&tf=cm'),
+                'https://mail.google.com/mail/u/0/?fs=1&to=${MediaConstants.email}&tf=cm'),
             child: Text("Let's chat",
                 style: GoogleFonts.getFont('Delius',
                     decoration: TextDecoration.underline,
