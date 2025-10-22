@@ -26,38 +26,37 @@ class NavBarItem extends StatelessWidget {
           splashColor: Colors.white60,
           onTap: () => onTap(),
           child: Container(
-            height: 40.0,
-            width: 50,
+            height: 35.0,
+            width: 60,
             alignment: Alignment.center,
             margin: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(
-                    height: 6,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 4.0,
+                ),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    color: data.value
+                        ? CustomColors.primary
+                        : Colors.white,
+                    fontWeight: FontWeight.w500
                   ),
-                  Text(
-                    text,
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      color: data.value
-                          ? CustomColors.primary
-                          : Colors.white,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 6,
-                  ),
-                  data.value
-                      ? Container(
-                          width: 40,
-                          height: 1,
-                          color: CustomColors.primary,
-                        )
-                      : const SizedBox.shrink()
-                ],
-              ),
+                ),
+                const SizedBox(
+                  height: 4.0,
+                ),
+                data.value
+                    ? Container(
+                        width: text.length * 12.0,
+                        height: 1,
+                        color: CustomColors.primary,
+                      )
+                    : const SizedBox.shrink()
+              ],
             ),
           ),
         );
