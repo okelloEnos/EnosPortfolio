@@ -103,6 +103,7 @@ class _HomeState extends State<Home> {
           showFloatingButton),
       body: Container(
         color: CustomColors.brightBackground,
+        // color: Colors.red,
         width: width,
         child: SingleChildScrollView(
           controller: scrollController,
@@ -110,7 +111,7 @@ class _HomeState extends State<Home> {
             children: [
               Column(
                 children: [
-                  const SizedBox(height: 130),
+                  const SizedBox(height: 105),
                   UpperContainer(width: width),
                   LowerContainer(
                       width: width,
@@ -128,7 +129,7 @@ class _HomeState extends State<Home> {
               NavBar(
                 width: width,
                 skillsKey: skillsKey,
-                intrestsKey: intrestsKey,
+                interestsKey: intrestsKey,
                 key: homeKey,
                 scrollController: scrollController,
               ),

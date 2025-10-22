@@ -13,13 +13,13 @@ import 'nav_bar_item_with_icon.dart';
 
 class NavBar extends StatelessWidget {
   final double width;
-  final GlobalKey intrestsKey;
+  final GlobalKey interestsKey;
   final GlobalKey skillsKey;
   final ScrollController scrollController;
   late final RxDouble collapsableHeight;
   NavBar(
       {required this.width,
-      required this.intrestsKey,
+      required this.interestsKey,
       required this.skillsKey,
       required this.scrollController,
       Key? key})
@@ -37,48 +37,56 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget navBarRow = Stack(children: [
-      Padding(
-        padding: EdgeInsets.only(left: width * 0.04),
-        child: Logo(width: width,scrollController: scrollController,),
-      ),
-      Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            NavBarItem(
-              text: 'Home',
-              onTap: () {},
-            ),
-            NavBarItem(
-                text: 'Skills', onTap: () => scrollToWidgetByKey(skillsKey)),
-            NavBarItem(
-              text: 'Intrests',
-              onTap: () => scrollToWidgetByKey(intrestsKey),
-            ),
-            const SizedBox(width: 60),
-          ]),
-      const Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-        SizedBox(width: 50),
-        Row(children: [
-          NavBarItemWithIcon(
-            text: 'github',
-            icon: ImageAssetConstants.github,
-            url: MediaConstants.github,
-          ),
-          SizedBox(width: 10),
-          NavBarItemWithIcon(
-              text: 'facebook',
-              icon: ImageAssetConstants.facebook,
-              url: MediaConstants.facebook),
-          SizedBox(width: 10),
-          NavBarItemWithIcon(
-              text: 'linkedIn',
-              icon: ImageAssetConstants.linkedIn,
-              url: MediaConstants.linkedIn),
-          SizedBox(width: 50),
-        ])
-      ])
+    Widget navBarRow = Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+      Logo(width: width, scrollController: scrollController),
+          const SizedBox(width: 16.0),
+          const Spacer(),
+          Row(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                NavBarItem(
+                  text: 'Home',
+                  onTap: () {},
+                ),
+                NavBarItem(
+                    text: 'Skills', onTap: () => scrollToWidgetByKey(skillsKey)),
+                NavBarItem(
+                  text: 'Projects',
+                  onTap: () => scrollToWidgetByKey(interestsKey),
+                ),
+              ]),
+          const Spacer(),
+          const SizedBox(width: 16.0),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+
+            Row(children: [
+              const NavBarItemWithIcon(
+                text: 'Github',
+                icon: ImageAssetConstants.github,
+                url: MediaConstants.github,
+              ),
+              const SizedBox(width: 16.0),
+              // NavBarItemWithIcon(
+              //     text: 'facebook',
+              //     icon: ImageAssetConstants.facebook,
+              //     url: MediaConstants.facebook),
+              // SizedBox(width: 10),
+              const NavBarItemWithIcon(
+                  text: 'LinkedIn',
+                  icon: ImageAssetConstants.linkedIn,
+                  url: MediaConstants.linkedIn),
+              SizedBox(width: width >= Breakpoints.xlg ? width * 0.06 : width * 0.03),
+            ])
+          ])
     ]);
     List<Widget>? navBarColumn = [
       NavBarItem(
@@ -97,7 +105,7 @@ class NavBar extends StatelessWidget {
       NavBarItem(
           text: 'Intrests',
           onTap: () {
-            scrollToWidgetByKey(intrestsKey);
+            scrollToWidgetByKey(interestsKey);
             collapsableHeight.value = 0.0;
           }),
       NavBarItem(
@@ -117,13 +125,14 @@ class NavBar extends StatelessWidget {
       children: [
         ObxValue<RxDouble>(
             (data) => AnimatedContainer(
-                  margin: const EdgeInsets.only(top: 110.0),
+                  margin: const EdgeInsets.only(top: 0.0),
                   duration: const Duration(milliseconds: 375),
                   curve: Curves.ease,
                   height: data.value,
                   width: double.infinity,
                   decoration: const BoxDecoration(
-                    color: CustomColors.darkBackground,
+                    // color: CustomColors.darkBackground,
+                    color: Colors.orange
                   ),
                   child: SingleChildScrollView(
                     child: Column(
@@ -133,9 +142,11 @@ class NavBar extends StatelessWidget {
                 ),
             collapsableHeight),
         Container(
-          height: 80.0,
-          margin: const EdgeInsets.only(top: 40.0),
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          // color: CustomColors.brightBackground,
+          color: Colors.green,
+          height: 75.0,
+          // margin: const EdgeInsets.only(top: 16.0),
+          // padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: (width < Breakpoints.xlg)
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
