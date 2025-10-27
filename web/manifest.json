@@ -1,11 +1,11 @@
 {
-    "name": "enos_portfolio",
-    "short_name": "enos_portfolio",
+    "name": "enos_portfolio2",
+    "short_name": "enos_portfolio1",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Enos Okello personal portfolio",
+    "description": "Enos Okello | Software Engineer",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

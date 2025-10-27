@@ -8,4 +8,7 @@ static const Color primary=Color(0xff6AE99F);
 static const Color secondary=Color(0xffDF504A);
 static const Color purple=Color(0xff5F70F9);
 static const Color gray=Color(0xffD3D3D3);
+static const Color orange=Color(0xffFA7E39);
+static const Color darkBlue=Color(0xff043B71);
 }
+

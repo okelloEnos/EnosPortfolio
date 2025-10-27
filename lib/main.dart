@@ -28,6 +28,7 @@ class PortfolioView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // title: 'Enos Okello | Software Engineer',
       title: 'Enos Okello',
       theme: AppTheme.lightTheme(),
       // darkTheme: AppTheme.darkTheme(),

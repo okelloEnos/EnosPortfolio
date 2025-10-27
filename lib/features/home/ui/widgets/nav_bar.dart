@@ -84,6 +84,22 @@ class NavBar extends StatelessWidget {
                   text: 'LinkedIn',
                   icon: ImageAssetConstants.linkedIn,
                   url: MediaConstants.linkedIn),
+              const SizedBox(width: 16.0),
+              InkWell(
+                onTap: () async => !await launch(
+                    'https://mail.google.com/mail/u/0/?fs=1&to=${MediaConstants.email}&tf=cm'),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 12.0, vertical: 8.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(100.0),
+                  ),
+                  child: const Text("View Resume",
+                      style: TextStyle(
+                          color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold)),
+                ),
+              ),
               SizedBox(width: width >= Breakpoints.xlg ? width * 0.06 : width * 0.03),
             ])
           ])
@@ -142,8 +158,8 @@ class NavBar extends StatelessWidget {
                 ),
             collapsableHeight),
         Container(
-          // color: CustomColors.brightBackground,
-          color: Colors.green,
+          color: CustomColors.brightBackground,
+          // color: Colors.green,
           height: 75.0,
           // margin: const EdgeInsets.only(top: 16.0),
           // padding: const EdgeInsets.symmetric(horizontal: 24.0),
