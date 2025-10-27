@@ -1,3 +1,4 @@
+import 'package:enos_portfolio/features/home/ui/widgets/about_section.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +9,7 @@ import '../widgets/footer.dart';
 import '../widgets/landing_section.dart';
 import '../widgets/lower_container.dart';
 import '../widgets/nav_bar.dart';
+import '../widgets/project_section.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -144,6 +146,8 @@ class _HomeState extends State<Home> {
                       ),
                     ],
                   ),
+                  AboutSection(width: width, height: height - 75.0),
+                  ProjectSection(width: width, height: height - 75.0),
                   LowerContainer(
                       width: width,
                       intrests: intrests,

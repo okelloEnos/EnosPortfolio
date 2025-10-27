@@ -1,6 +1,9 @@
+import 'package:enos_portfolio/features/home/ui/widgets/about_images.dart';
 import 'package:flutter/material.dart';
 import '../../../../util/breakpoints.dart';
 import '../../../../util/custom_colors.dart';
+import '../../../../util/image_asset_constants.dart';
+import 'about_description.dart';
 import 'description.dart';
 import 'enos_image.dart';
 
@@ -41,15 +44,26 @@ class AboutSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      child: Description(
+                      child: AboutDescription(
                         isVertical: false,
                         width: width,
                       ),
                     ),
                     const SizedBox(width: 32.0),
-                    EnosImage(
-                      width: width,
-                    ),
+                    // EnosAboutImage(
+                    //   width: width,
+                    // ),
+                    SizedBox(
+                      width: 300,
+                      child: ImageTriptych(
+                        imageUrls: const [
+                          ImageAssetConstants.enosAbout,
+                          ImageAssetConstants.enosAbout,
+                          ImageAssetConstants.enosAbout,
+                        ],
+                        height: 420,
+                      ),
+                    )
                   ],
                 ),
               ),

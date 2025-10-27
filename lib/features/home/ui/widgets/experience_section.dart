@@ -4,7 +4,7 @@ import '../../../../util/custom_colors.dart';
 import 'description.dart';
 import 'enos_image.dart';
 
-// Purpose: Show professional journey or growth.
+//5. Purpose: Show professional journey or growth.
 //
 // Content:
 //

@@ -4,7 +4,7 @@ import '../../../../util/custom_colors.dart';
 import 'description.dart';
 import 'enos_image.dart';
 
-// Purpose: Highlight credibility and milestones.
+//6. Purpose: Highlight credibility and milestones.
 //
 // Content:
 //

@@ -4,7 +4,7 @@ import '../../../../util/custom_colors.dart';
 import 'description.dart';
 import 'enos_image.dart';
 
-// Purpose: Convert visitors to leads.
+//8. Purpose: Convert visitors to leads.
 //
 // Content:
 //

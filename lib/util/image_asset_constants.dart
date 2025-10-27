@@ -10,5 +10,6 @@ class ImageAssetConstants{
   static const String java='assets/images/java.png';
   static const String python='assets/images/python.png';
   static const String enos='assets/images/enos_outline_white.png';
+  static const String enosAbout='assets/images/enos_without_outline.png';
   static const String backendIcon='assets/images/backend_icon.png';
 }

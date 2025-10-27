@@ -4,7 +4,7 @@ import '../../../../util/custom_colors.dart';
 import 'description.dart';
 import 'enos_image.dart';
 
-// Purpose: Show thought leadership or technical depth.
+//7. Purpose: Show thought leadership or technical depth.
 class BlogSection extends StatelessWidget {
   final double width;
   final double height;

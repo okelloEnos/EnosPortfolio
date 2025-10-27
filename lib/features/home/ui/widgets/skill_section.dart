@@ -4,7 +4,7 @@ import '../../../../util/custom_colors.dart';
 import 'description.dart';
 import 'enos_image.dart';
 
-// Purpose: Show your expertise visually.
+//3. Purpose: Show your expertise visually.
 //
 // Content:
 //
