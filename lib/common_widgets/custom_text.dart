@@ -21,7 +21,7 @@ class CustomInputTextWidget extends StatelessWidget {
             color: color ?? Theme.of(context).colorScheme.primary,
             fontWeight: fontWeight ?? FontWeight.normal,
             fontSize: fontSize ?? 16.0,
-            fontFamily: fontFamily ?? 'Montserrat',
+            fontFamily: fontFamily ?? 'Manrope',
           )),
     );
   }

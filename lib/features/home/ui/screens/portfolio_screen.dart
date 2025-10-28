@@ -1,4 +1,5 @@
 import 'package:enos_portfolio/features/home/ui/widgets/about_section.dart';
+import 'package:enos_portfolio/util/image_asset_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,63 +20,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  late final List<Map> intrests;
-  late final GlobalKey intrestsKey;
-  late final GlobalKey skillsKey;
-  late final GlobalKey homeKey;
+  // late final List<Map> intrests;
+  // late final GlobalKey intrestsKey;
+
+  late final GlobalKey homeSectionKey;
+  late final GlobalKey aboutSectionKey;
+  late final GlobalKey projectSectionKey;
+
   late final ScrollController scrollController;
   late final RxBool showFloatingButton;
 
   @override
   void initState() {
-    intrestsKey = GlobalKey();
-    skillsKey = GlobalKey();
-    homeKey = GlobalKey();
+    homeSectionKey = GlobalKey();
+    aboutSectionKey = GlobalKey();
+    projectSectionKey = GlobalKey();
+
     scrollController = ScrollController();
     showFloatingButton = false.obs;
-
-    intrests = [
-      {
-        'intrest': 'Beatbox',
-        'color': CustomColors.primary,
-        'textColor': CustomColors.darkBackground,
-      },
-      {
-        'intrest': 'Chess',
-        'color': CustomColors.brightBackground,
-        'textColor': CustomColors.primary,
-      },
-      {
-        'intrest': 'Soccer',
-        'color': CustomColors.primary,
-        'textColor': CustomColors.darkBackground,
-      },
-      {
-        'intrest': 'Listening to music',
-        'color': CustomColors.brightBackground,
-        'textColor': CustomColors.primary,
-      },
-      {
-        'intrest': 'Watching movies',
-        'color': CustomColors.brightBackground,
-        'textColor': CustomColors.primary,
-      },
-      {
-        'intrest': 'Math',
-        'color': CustomColors.primary,
-        'textColor': CustomColors.darkBackground,
-      },
-      {
-        'intrest': 'Learning English',
-        'color': CustomColors.brightBackground,
-        'textColor': CustomColors.primary,
-      },
-      {
-        'intrest': 'Solving Problems',
-        'color': CustomColors.primary,
-        'textColor': CustomColors.darkBackground,
-      },
-    ];
 
     scrollController.addListener(() {
       if (scrollController.offset >= Breakpoints.floatingButton) {
@@ -88,7 +50,7 @@ class _HomeState extends State<Home> {
   }
 
   void _scrollToNextSection() {
-    final context = intrestsKey.currentContext;
+    final context = aboutSectionKey.currentContext;
     if (context != null) {
       Scrollable.ensureVisible(
         context,
@@ -102,6 +64,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+    final theme = Theme.of(context);
 
     // double width = MediaQuery.sizeOf(context).width;
     // double height = MediaQuery.sizeOf(context).height;
@@ -119,9 +82,11 @@ class _HomeState extends State<Home> {
                     scrollController.position.minScrollExtent,
                     duration: const Duration(milliseconds: 700),
                     curve: Curves.easeInOut),
-                backgroundColor: CustomColors.primary,
-                child: const Icon(Icons.arrow_upward,
-                    color: CustomColors.darkBackground)),
+                backgroundColor: theme.colorScheme.primary,
+                // child: Image.asset(ImageAssetConstants.doubleArrowDown)
+                child: Icon(Icons.arrow_upward,
+                    color: theme.colorScheme.onPrimary)
+              ),
           ),
           showFloatingButton),
       body: Container(
@@ -135,12 +100,17 @@ class _HomeState extends State<Home> {
               Column(
                 children: [
                   const SizedBox(height: 75.0),
+                  Container(
+                    width: width,
+                    height: 0.2,
+                    color:CustomColors.gray,
+                  ),
                   Stack(
                     children: [
                       LandingSection(width: width, height: height - 75.0),
                       FadeOnScrollArrow(
                         scrollController: scrollController,
-                        nextSectionKey: intrestsKey,
+                        nextSectionKey: aboutSectionKey,
                         fadeDistance: 250.0, // tweak to taste
                         bottomPadding: 20.0,
                       ),
@@ -148,11 +118,6 @@ class _HomeState extends State<Home> {
                   ),
                   AboutSection(width: width, height: height - 75.0),
                   ProjectSection(width: width, height: height - 75.0),
-                  LowerContainer(
-                      width: width,
-                      intrests: intrests,
-                      intrestsKey: intrestsKey,
-                      skillsKey: skillsKey),
                   Container(
                     width: width,
                     height: 0.1,
@@ -163,9 +128,9 @@ class _HomeState extends State<Home> {
               ),
               NavBar(
                 width: width,
-                skillsKey: skillsKey,
-                interestsKey: intrestsKey,
-                key: homeKey,
+                projectSectionKey: projectSectionKey,
+                aboutSectionKey: aboutSectionKey,
+                key: homeSectionKey,
                 scrollController: scrollController,
               ),
             ],

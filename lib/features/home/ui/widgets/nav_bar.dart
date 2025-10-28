@@ -1,5 +1,6 @@
 import 'package:enos_portfolio/util/media_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -13,14 +14,15 @@ import 'nav_bar_item_with_icon.dart';
 
 class NavBar extends StatelessWidget {
   final double width;
-  final GlobalKey interestsKey;
-  final GlobalKey skillsKey;
+  final GlobalKey aboutSectionKey;
+  final GlobalKey projectSectionKey;
   final ScrollController scrollController;
   late final RxDouble collapsableHeight;
+
   NavBar(
       {required this.width,
-      required this.interestsKey,
-      required this.skillsKey,
+      required this.aboutSectionKey,
+      required this.projectSectionKey,
       required this.scrollController,
       Key? key})
       : super(key: key) {
@@ -37,11 +39,13 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     Widget navBarRow = Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-      Logo(width: width, scrollController: scrollController),
+          Logo(width: width, scrollController: scrollController),
           const SizedBox(width: 16.0),
           const Spacer(),
           Row(
@@ -54,56 +58,92 @@ class NavBar extends StatelessWidget {
                   onTap: () {},
                 ),
                 NavBarItem(
-                    text: 'Skills', onTap: () => scrollToWidgetByKey(skillsKey)),
+                    text: 'About', onTap: () => scrollToWidgetByKey(projectSectionKey)),
+                // NavBarItem(
+                //   text: 'Skills',
+                //   onTap: () {},
+                // ),
                 NavBarItem(
                   text: 'Projects',
-                  onTap: () => scrollToWidgetByKey(interestsKey),
+                  onTap: () => scrollToWidgetByKey(aboutSectionKey),
                 ),
+                // NavBarItem(
+                //   text: 'Experience',
+                //   onTap: () {},
+                // ),
+                // NavBarItem(
+                //   text: 'Certificates',
+                //   onTap: () {},
+                // ),
+                // NavBarItem(
+                //   text: 'Blog',
+                //   onTap: () {},
+                // ),
+                // NavBarItem(
+                //   text: 'Testimonials',
+                //   onTap: () {},
+                // ),
+                // NavBarItem(
+                //   text: 'Contact',
+                //   onTap: () {},
+                // ),
               ]),
           const Spacer(),
           const SizedBox(width: 16.0),
           Row(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-
-            Row(children: [
-              const NavBarItemWithIcon(
-                text: 'Github',
-                icon: ImageAssetConstants.github,
-                url: MediaConstants.github,
-              ),
-              const SizedBox(width: 16.0),
-              // NavBarItemWithIcon(
-              //     text: 'facebook',
-              //     icon: ImageAssetConstants.facebook,
-              //     url: MediaConstants.facebook),
-              // SizedBox(width: 10),
-              const NavBarItemWithIcon(
-                  text: 'LinkedIn',
-                  icon: ImageAssetConstants.linkedIn,
-                  url: MediaConstants.linkedIn),
-              const SizedBox(width: 16.0),
-              InkWell(
-                onTap: () async => !await launch(
-                    'https://mail.google.com/mail/u/0/?fs=1&to=${MediaConstants.email}&tf=cm'),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 12.0, vertical: 8.0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(100.0),
+                Row(children: [
+                  const NavBarItemWithIcon(
+                    text: 'Github',
+                    icon: ImageAssetConstants.github,
+                    url: MediaConstants.github,
                   ),
-                  child: const Text("View Resume",
-                      style: TextStyle(
-                          color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold)),
-                ),
-              ),
-              SizedBox(width: width >= Breakpoints.xlg ? width * 0.06 : width * 0.03),
-            ])
-          ])
-    ]);
+                  const SizedBox(width: 16.0),
+                  // NavBarItemWithIcon(
+                  //     text: 'facebook',
+                  //     icon: ImageAssetConstants.facebook,
+                  //     url: MediaConstants.facebook),
+                  // SizedBox(width: 10),
+                  const NavBarItemWithIcon(
+                      text: 'LinkedIn',
+                      icon: ImageAssetConstants.linkedIn,
+                      url: MediaConstants.linkedIn),
+                  const SizedBox(width: 16.0),
+                  InkWell(
+                    onTap: () async => !await launchUrl(
+                    Uri.parse('https://mail.google.com/mail/u/0/?fs=1&to=${MediaConstants.email}&tf=cm')
+                    ),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12.0, vertical: 8.0),
+                      decoration: BoxDecoration(
+                        color: theme.colorScheme.primary,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text("View Resume",
+                              style: theme.textTheme.labelMedium,
+                          ),
+                          const SizedBox(width: 8.0),
+                          SvgPicture.asset(ImageAssetConstants.arrow,
+                              colorFilter: ColorFilter.mode(theme.colorScheme.onPrimary, BlendMode.srcIn),
+                              width: 18, height: 18),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                      width: width >= Breakpoints.xlg
+                          ? width * 0.06
+                          : width * 0.03),
+                ])
+              ])
+        ]);
     List<Widget>? navBarColumn = [
       NavBarItem(
           text: 'Home',
@@ -114,14 +154,14 @@ class NavBar extends StatelessWidget {
       NavBarItem(
           text: 'Skills',
           onTap: () {
-            scrollToWidgetByKey(skillsKey);
+            scrollToWidgetByKey(projectSectionKey);
             collapsableHeight.value = 0.0;
           }),
       const SizedBox(width: 10),
       NavBarItem(
           text: 'Intrests',
           onTap: () {
-            scrollToWidgetByKey(interestsKey);
+            scrollToWidgetByKey(aboutSectionKey);
             collapsableHeight.value = 0.0;
           }),
       NavBarItem(
@@ -131,45 +171,40 @@ class NavBar extends StatelessWidget {
           }),
       NavBarItem(
           text: 'facebook',
-          onTap: () async =>
-              await launch(MediaConstants.facebook)),
+          onTap: () async => await launch(MediaConstants.facebook)),
       NavBarItem(
           text: 'linkedIn',
           onTap: () async => await launch(MediaConstants.linkedIn)),
     ];
     return Stack(
       children: [
-        ObxValue<RxDouble>(
-            (data) => AnimatedContainer(
+        ObxValue<RxDouble>((data) => AnimatedContainer(
                   margin: const EdgeInsets.only(top: 0.0),
                   duration: const Duration(milliseconds: 375),
                   curve: Curves.ease,
                   height: data.value,
                   width: double.infinity,
-                  decoration: const BoxDecoration(
-                    // color: CustomColors.darkBackground,
-                    color: Colors.orange
-                  ),
+                  decoration: BoxDecoration(
+                      color: theme.colorScheme.primary),
                   child: SingleChildScrollView(
                     child: Column(
                       children: navBarColumn,
                     ),
                   ),
-                ),
-            collapsableHeight),
+                ), collapsableHeight),
         Container(
-          color: CustomColors.brightBackground,
-          // color: Colors.green,
+          color: theme.colorScheme.surface,
           height: 75.0,
-          // margin: const EdgeInsets.only(top: 16.0),
-          // padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: (width < Breakpoints.xlg)
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
                         padding: EdgeInsets.only(left: width * 0.04),
-                        child: Logo(width: width,scrollController: scrollController,)),
+                        child: Logo(
+                          width: width,
+                          scrollController: scrollController,
+                        )),
                     NavBarButton(
                         onPressed: () {
                           if (collapsableHeight.value == 0.0) {

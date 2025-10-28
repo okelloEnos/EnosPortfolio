@@ -1,3 +1,4 @@
+import 'package:enos_portfolio/util/image_asset_constants.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -35,6 +36,8 @@ class _AnimatedDownArrowState extends State<AnimatedDownArrow>
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return AnimatedBuilder(
       animation: _animation,
       builder: (_, child) {
@@ -44,11 +47,12 @@ class _AnimatedDownArrowState extends State<AnimatedDownArrow>
         );
       },
       child: IconButton(
-        icon: const Icon(
-          Icons.keyboard_arrow_down_rounded,
-          size: 40,
-          color: Colors.white70,
-        ),
+        icon: Image.asset(ImageAssetConstants.doubleArrowDown, width: 24, height: 24, color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)),
+        // icon: const Icon(
+        //   Icons.keyboard_arrow_down_rounded,
+        //   size: 40,
+        //   color: Colors.white70,
+        // ),
         onPressed: widget.onPressed,
       ),
     );

@@ -4,7 +4,7 @@ import '../../../../util/custom_colors.dart';
 import 'description.dart';
 import 'enos_image.dart';
 
-//9. Testimonials — from clients, colleagues, or mentors.
+//8. Testimonials — from clients, colleagues, or mentors.
 class TestimonialSection extends StatelessWidget {
   final double width;
   final double height;
