@@ -19,29 +19,23 @@ class LandingSection extends StatelessWidget {
       // color: Colors.green,
       child: LayoutBuilder(builder: (context, consraints) {
         if (consraints.maxWidth >= Breakpoints.lg) {
-          return Container(
-            // color: Colors.red,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 200.0),
-              child: Align(
-                alignment: AlignmentDirectional.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Description(
-                        isVertical: false,
-                        width: width,
-                      ),
-                    ),
-                    const SizedBox(width: 32.0),
-                    EnosImage(
-                      width: width,
-                    ),
-                  ],
+          return Align(
+            alignment: AlignmentDirectional.center,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Description(
+                    isVertical: false,
+                    width: width,
+                  ),
                 ),
-              ),
+                const SizedBox(width: 32.0),
+                EnosImage(
+                  width: width,
+                ),
+              ],
             ),
           );
         } else if (consraints.maxWidth < Breakpoints.lg && consraints.maxWidth >= Breakpoints.md) {

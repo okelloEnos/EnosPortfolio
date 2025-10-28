@@ -1,3 +1,4 @@
+import 'package:enos_portfolio/util/content_constants.dart';
 import 'package:enos_portfolio/util/media_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -54,17 +55,17 @@ class NavBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 NavBarItem(
-                  text: 'Home',
+                  text: ContentConstants.home,
                   onTap: () {},
                 ),
                 NavBarItem(
-                    text: 'About', onTap: () => scrollToWidgetByKey(projectSectionKey)),
+                    text: ContentConstants.about, onTap: () => scrollToWidgetByKey(projectSectionKey)),
                 // NavBarItem(
                 //   text: 'Skills',
                 //   onTap: () {},
                 // ),
                 NavBarItem(
-                  text: 'Projects',
+                  text: ContentConstants.project,
                   onTap: () => scrollToWidgetByKey(aboutSectionKey),
                 ),
                 // NavBarItem(
@@ -97,18 +98,13 @@ class NavBar extends StatelessWidget {
               children: [
                 Row(children: [
                   const NavBarItemWithIcon(
-                    text: 'Github',
+                    text: ContentConstants.github,
                     icon: ImageAssetConstants.github,
                     url: MediaConstants.github,
                   ),
                   const SizedBox(width: 16.0),
-                  // NavBarItemWithIcon(
-                  //     text: 'facebook',
-                  //     icon: ImageAssetConstants.facebook,
-                  //     url: MediaConstants.facebook),
-                  // SizedBox(width: 10),
                   const NavBarItemWithIcon(
-                      text: 'LinkedIn',
+                      text: ContentConstants.linkedIn,
                       icon: ImageAssetConstants.linkedIn,
                       url: MediaConstants.linkedIn),
                   const SizedBox(width: 16.0),
@@ -126,7 +122,7 @@ class NavBar extends StatelessWidget {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text("View Resume",
+                          Text(ContentConstants.viewResume,
                               style: theme.textTheme.labelMedium,
                           ),
                           const SizedBox(width: 8.0),

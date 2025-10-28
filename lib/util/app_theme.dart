@@ -40,6 +40,7 @@ class AppTheme {
 class AppTextTheme {
   static TextTheme lightTextTheme() {
     return const TextTheme(
+      // not used
       displaySmall: TextStyle(
         color: CustomColors.primary,
         fontFamily: 'Manrope',
@@ -48,6 +49,7 @@ class AppTextTheme {
         height: 1.6,
         letterSpacing: 0.5,
       ),
+      // not used
       displayMedium: TextStyle(
         color: CustomColors.primary,
         fontFamily: 'Manrope',
@@ -64,6 +66,7 @@ class AppTextTheme {
         height: 1.6,
         // letterSpacing: 0.5,
       ),
+      // not used
       labelSmall: TextStyle(
         color: CustomColors.primary,
         fontFamily: 'Manrope',
@@ -86,6 +89,7 @@ class AppTextTheme {
         height: 1.6,
         letterSpacing: 0.5,
       ),
+      // not used
       titleSmall: TextStyle(
         color: CustomColors.primary,
         fontFamily: 'Manrope',
@@ -95,13 +99,13 @@ class AppTextTheme {
         letterSpacing: 0.5,
       ),
       titleMedium: TextStyle(
-        color: CustomColors.primary,
         fontFamily: 'Manrope',
-        fontSize: 18,
-        fontWeight: FontWeight.w400,
+        fontSize: 24,
+        fontWeight: FontWeight.w800,
         height: 1.6,
         letterSpacing: 0.5,
       ),
+      // not used
       titleLarge: TextStyle(
         color: CustomColors.primary,
         fontFamily: 'Manrope',

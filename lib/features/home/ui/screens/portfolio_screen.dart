@@ -97,34 +97,47 @@ class _HomeState extends State<Home> {
           controller: scrollController,
           child: Stack(
             children: [
-              Column(
-                children: [
-                  const SizedBox(height: 75.0),
-                  Container(
-                    width: width,
-                    height: 0.2,
-                    color:CustomColors.gray,
-                  ),
-                  Stack(
-                    children: [
-                      LandingSection(width: width, height: height - 75.0),
-                      FadeOnScrollArrow(
-                        scrollController: scrollController,
-                        nextSectionKey: aboutSectionKey,
-                        fadeDistance: 250.0, // tweak to taste
-                        bottomPadding: 20.0,
-                      ),
-                    ],
-                  ),
-                  AboutSection(width: width, height: height - 75.0),
-                  ProjectSection(width: width, height: height - 75.0),
-                  Container(
-                    width: width,
-                    height: 0.1,
-                    color:CustomColors.gray,
-                  ),
-                  Footer(width: width,scrollController: scrollController,),
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 200.0),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 75.0),
+                    Container(
+                      width: width,
+                      height: 0.2,
+                      color:CustomColors.gray,
+                    ),
+                    Stack(
+                      children: [
+                        LandingSection(width: width, height: height - 75.0),
+                        FadeOnScrollArrow(
+                          scrollController: scrollController,
+                          nextSectionKey: aboutSectionKey,
+                          fadeDistance: 250.0, // tweak to taste
+                          bottomPadding: 20.0,
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: width,
+                      height: 0.2,
+                      color:CustomColors.gray,
+                    ),
+                    AboutSection(width: width, height: height),
+                    Container(
+                      width: width,
+                      height: 0.2,
+                      color:CustomColors.gray,
+                    ),
+                    ProjectSection(width: width, height: height),
+                    Container(
+                      width: width,
+                      height: 0.1,
+                      color:CustomColors.gray,
+                    ),
+                    Footer(width: width,scrollController: scrollController,),
+                  ],
+                ),
               ),
               NavBar(
                 width: width,

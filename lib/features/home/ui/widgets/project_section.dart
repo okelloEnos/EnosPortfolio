@@ -4,6 +4,7 @@ import 'package:enos_portfolio/features/home/ui/widgets/past_projects.dart';
 import 'package:enos_portfolio/util/image_asset_constants.dart';
 import 'package:flutter/material.dart';
 import '../../../../util/breakpoints.dart';
+import '../../../../util/content_constants.dart';
 import '../../../../util/custom_colors.dart';
 import 'description.dart';
 import 'enos_image.dart';
@@ -29,25 +30,22 @@ class ProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       width: width,
-      // height: height,
-      color: CustomColors.brightBackground,
-      // color: Colors.green,
-      child: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 200.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text("Interesting projects I've worked on...",
-                style: TextStyle(
-                    color: Colors.white, fontSize: 16)),
-            SizedBox(height: 32.0),
-            // Expanded(child: PastProjectsSection()),
-            PastProjectsSection(),
-          ],
-        ),
+      // color: CustomColors.brightBackground,
+      color: Colors.green,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const SizedBox(height: 48.0),
+          Text(ContentConstants.projectTitle,
+            style: theme.textTheme.titleMedium,
+          ),
+          const SizedBox(height: 32.0),
+          const PastProjectsSection(),
+        ],
       ),
     );
     return Container(

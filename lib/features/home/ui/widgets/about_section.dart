@@ -26,49 +26,40 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Container(
       width: width,
-      height: height,
-      color: CustomColors.brightBackground,
+      // height: height,
+      color: theme.colorScheme.surface,
       // color: Colors.green,
       child: LayoutBuilder(builder: (context, consraints) {
         if (consraints.maxWidth >= Breakpoints.lg) {
-          return Container(
-            // color: Colors.red,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 200.0),
-              child: Align(
-                alignment: AlignmentDirectional.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: AboutDescription(
-                        isVertical: false,
-                        width: width,
-                      ),
-                    ),
-                    const SizedBox(width: 32.0),
-                    // EnosAboutImage(
-                    //   width: width,
-                    // ),
-                    SizedBox(
-                      width: 300,
-                      child: ImageTriptych(
-                        imageUrls: const [
-                          ImageAssetConstants.enosAbout,
-                          ImageAssetConstants.enosAbout,
-                          ImageAssetConstants.enosAbout,
-                        ],
-                        height: 420,
-                      ),
-                    )
-                  ],
+          return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 4,
+                  child: AboutDescription(
+                    isVertical: false,
+                    width: width,
+                  ),
                 ),
-              ),
-            ),
-          );
+                const SizedBox(width: 32.0),
+                Expanded(
+                  flex: 3,
+                  child: AboutSectionImages(
+                    imageUrls: const [
+                      ImageAssetConstants.enosAbout,
+                      ImageAssetConstants.enosAbout,
+                      ImageAssetConstants.enosAbout,
+                    ],
+                    height: 450,
+                  ),
+                ),
+              ],
+            );
         } else if (consraints.maxWidth < Breakpoints.lg && consraints.maxWidth >= Breakpoints.md) {
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
