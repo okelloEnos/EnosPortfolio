@@ -15,18 +15,30 @@ class NavBarItemWithIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return ElevatedButton.icon(
       style: ButtonStyle(
-        elevation: MaterialStateProperty.all<double>(0),
-        backgroundColor: MaterialStateProperty.all<Color>(
-            CustomColors.brightBackground),
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+        ),
+        elevation: WidgetStateProperty.all<double>(0),
+        backgroundColor: WidgetStateProperty.all<Color>(
+            theme.colorScheme.surface),
       ),
-      // icon: Image.asset(icon),
-      icon: SvgPicture.asset(icon, color: Colors.white, width: 18, height: 18),
+      icon: SvgPicture.asset(icon,
+          colorFilter: ColorFilter.mode(theme.colorScheme.onPrimary, BlendMode.srcIn),
+          width: 18, height: 18),
       onPressed: () async {
-        await launch(url);
+        await launchUrl(Uri.parse(url));
       },
-      label: Text(text, style: const TextStyle(fontSize: 14)),
+      label: Text(text,
+          style: theme.textTheme.labelMedium?.copyWith(
+            color: theme.colorScheme.onPrimary,
+          )
+      ),
     );
   }
 }

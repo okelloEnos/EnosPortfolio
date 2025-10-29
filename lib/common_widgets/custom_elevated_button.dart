@@ -30,7 +30,7 @@ class CustomElevatedButton extends StatelessWidget {
       icon: icon ?? const Icon(Icons.add, size: 20, color: Colors.white,),
       label: Text(btnText,
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: textFontSize ?? 18, fontFamily: "Montserrat", color: textColor ?? Colors.white),),
+        style: TextStyle(fontSize: textFontSize ?? 18, fontFamily: "Manrope", color: textColor ?? Colors.white),),
     ) : ElevatedButton(
         onPressed: onPressed,
       style: ElevatedButton.styleFrom(
@@ -47,7 +47,7 @@ class CustomElevatedButton extends StatelessWidget {
             Expanded(
               child: Text(btnText,
       textAlign: TextAlign.center,
-      style: TextStyle(fontSize: textFontSize ?? 18, fontFamily: "Montserrat", color: textColor ?? Colors.white),),
+      style: TextStyle(fontSize: textFontSize ?? 18, fontFamily: "Manrope", color: textColor ?? Colors.white),),
             ),
           ],
         ),

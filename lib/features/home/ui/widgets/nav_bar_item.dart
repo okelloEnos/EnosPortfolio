@@ -14,6 +14,8 @@ class NavBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return MouseRegion(
       onHover: (value) {
         isHighlighted.value = true;
@@ -23,7 +25,7 @@ class NavBarItem extends StatelessWidget {
       },
       child: ObxValue<RxBool>((data) {
         return InkWell(
-          splashColor: Colors.white60,
+          splashColor: theme.colorScheme.primary.withValues(alpha: 0.4),
           onTap: () => onTap(),
           child: Container(
             height: 35.0,
@@ -38,12 +40,10 @@ class NavBarItem extends StatelessWidget {
                 ),
                 Text(
                   text,
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: data.value
-                        ? CustomColors.primary
-                        : Colors.white,
-                    fontWeight: FontWeight.w500
+                  style: theme.textTheme.labelMedium?.copyWith(
+                      color: data.value
+                          ? theme.colorScheme.primary
+                          : theme.colorScheme.onPrimary,
                   ),
                 ),
                 const SizedBox(
@@ -53,7 +53,7 @@ class NavBarItem extends StatelessWidget {
                     ? Container(
                         width: text.length * 12.0,
                         height: 1,
-                        color: CustomColors.primary,
+                        color: theme.colorScheme.primary,
                       )
                     : const SizedBox.shrink()
               ],

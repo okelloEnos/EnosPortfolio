@@ -48,7 +48,7 @@ class CustomTextField extends StatelessWidget {
           color: color ?? theme.colorScheme.primary,
           fontWeight: FontWeight.w500,
           fontSize: fontSize ?? 16.0,
-          fontFamily: 'Montserrat'),
+          fontFamily: 'Manrope'),
       decoration: InputDecoration(
         // contentPadding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0, bottom: 8.0),
         prefixIcon: prefixIcon != null ? Padding(
@@ -66,7 +66,7 @@ class CustomTextField extends StatelessWidget {
             color: Colors.grey.shade400,
             fontWeight: FontWeight.normal,
             fontSize: hintFontSize ?? 16.0,
-            fontFamily: 'Montserrat'),
+            fontFamily: 'Manrope'),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.0),
             borderSide: BorderSide(
