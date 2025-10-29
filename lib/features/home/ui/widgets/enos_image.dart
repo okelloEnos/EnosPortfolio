@@ -137,7 +137,7 @@ class EnosAboutImage extends StatelessWidget {
           //   ),
           // ),
           Image.asset(
-            ImageAssetConstants.enosAbout,
+            ImageAssetConstants.enosBoatRiding,
             // height: 400,
             // width: width * 0.3,
             // height: width * 0.3,

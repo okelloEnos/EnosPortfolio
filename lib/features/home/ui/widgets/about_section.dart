@@ -1,6 +1,7 @@
 import 'package:enos_portfolio/features/home/ui/widgets/about_images.dart';
 import 'package:flutter/material.dart';
 import '../../../../util/breakpoints.dart';
+import '../../../../util/content_constants.dart';
 import '../../../../util/custom_colors.dart';
 import '../../../../util/image_asset_constants.dart';
 import 'about_description.dart';
@@ -35,31 +36,47 @@ class AboutSection extends StatelessWidget {
       // color: Colors.green,
       child: LayoutBuilder(builder: (context, consraints) {
         if (consraints.maxWidth >= Breakpoints.lg) {
-          return Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  flex: 4,
-                  child: AboutDescription(
-                    isVertical: false,
-                    width: width,
-                  ),
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const SizedBox(
+                height: 48.0,
+              ),
+              Text(
+                ContentConstants.aboutTitle,
+                style: theme.textTheme.titleMedium,
+              ),
+              const SizedBox(height: 24.0),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 4,
+                      child: AboutDescription(
+                        isVertical: false,
+                        width: width,
+                      ),
+                    ),
+                    const SizedBox(width: 32.0),
+                    Expanded(
+                      flex: 3,
+                      child: AboutSectionImages(
+                        imageUrls: const [
+                          ImageAssetConstants.enosPesakit,
+                          ImageAssetConstants.enosFlutterForwardOfficials,
+                          ImageAssetConstants.enosBoatRiding,
+                        ],
+                        height: 450,
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(width: 32.0),
-                Expanded(
-                  flex: 3,
-                  child: AboutSectionImages(
-                    imageUrls: const [
-                      ImageAssetConstants.enosAbout,
-                      ImageAssetConstants.enosAbout,
-                      ImageAssetConstants.enosAbout,
-                    ],
-                    height: 450,
-                  ),
-                ),
-              ],
-            );
+              const SizedBox(height: 96.0),
+            ],
+          );
         } else if (consraints.maxWidth < Breakpoints.lg && consraints.maxWidth >= Breakpoints.md) {
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,

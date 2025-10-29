@@ -2,6 +2,7 @@ import 'package:enos_portfolio/features/home/ui/widgets/about_section.dart';
 import 'package:enos_portfolio/util/image_asset_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../util/breakpoints.dart';
 import '../../../../util/custom_colors.dart';
@@ -127,15 +128,15 @@ class _HomeState extends State<Home> {
                     Container(
                       width: width,
                       height: 0.2,
-                      color:CustomColors.gray,
+                      color: CustomColors.gray,
                     ),
                     ProjectSection(width: width, height: height),
+                    const SizedBox(height: 350.0),
                     Container(
                       width: width,
-                      height: 0.1,
+                      height: 0.2,
                       color:CustomColors.gray,
                     ),
-                    Footer(width: width,scrollController: scrollController,),
                   ],
                 ),
               ),
@@ -145,6 +146,13 @@ class _HomeState extends State<Home> {
                 aboutSectionKey: aboutSectionKey,
                 key: homeSectionKey,
                 scrollController: scrollController,
+              ),
+              Positioned(
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  // child: Footer(width: width, scrollController: scrollController)
+                  child: PortfolioFooter(width: width, scrollController: scrollController),
               ),
             ],
           ),

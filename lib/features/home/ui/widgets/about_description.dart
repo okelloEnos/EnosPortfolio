@@ -31,19 +31,11 @@ class AboutDescription extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 48.0,
-            ),
-            Text(
-              ContentConstants.aboutTitle,
-              style: theme.textTheme.titleMedium,
-            ),
-            const SizedBox(height: 24.0),
             Text(
               ContentConstants.aboutDescription,
               style: theme.textTheme.bodySmall,
             ),
-            const SizedBox(height: 48.0),
+            const SizedBox(height: 96.0),
             // SizedBox(
             //   width: isVertical ? double.infinity : width * 0.29,
             //   height: 90,
@@ -74,7 +66,7 @@ class AboutDescription extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "View Resume",
+                      ContentConstants.viewResume,
                       style: theme.textTheme.labelLarge,
                     ),
                     const SizedBox(width: 8.0),
@@ -86,9 +78,6 @@ class AboutDescription extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 96.0,
             ),
           ],
         ),

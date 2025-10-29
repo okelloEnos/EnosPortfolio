@@ -10,7 +10,11 @@ class ImageAssetConstants {
   static const String java = 'assets/images/java.png';
   static const String python = 'assets/images/python.png';
   static const String enos = 'assets/images/enos_outline_white.png';
-  static const String enosAbout = 'assets/images/enos_without_outline.png';
+  static const String enosBoatRiding = 'assets/images/boat_riding.jpg';
+  static const String enosPesakit = 'assets/images/pesakit_end_year_team.jpg';
+  static const String enosFlutterForwardOfficials = 'assets/images/flutter_forward_with_officials.jpg';
+  static const String enosWithDog = 'assets/images/shagz.jpg';
+  static const String enosInStreet = 'assets/images/street.jpeg';
   static const String backendIcon = 'assets/images/backend_icon.png';
   static const String arrow = 'assets/images/arrow.svg';
   static const String doubleArrowDown = 'assets/images/double_arrow_down.png';
@@ -20,5 +24,5 @@ class ImageAssetConstants {
   static const String britam = 'assets/images/britam.png';
   static const String portfolio = 'assets/images/portfolio.png';
   static const String pixabay = 'assets/images/pixabay.png';
-
+  static const String placeholder = 'assets/images/creature_codex.png';
 }

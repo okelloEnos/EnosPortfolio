@@ -66,11 +66,9 @@ class AppTextTheme {
         height: 1.6,
         // letterSpacing: 0.5,
       ),
-      // not used
       labelSmall: TextStyle(
-        color: CustomColors.primary,
         fontFamily: 'Manrope',
-        fontSize: 10,
+        fontSize: 12,
         fontWeight: FontWeight.bold,
         height: 1.6,
         letterSpacing: 0.5,
@@ -89,12 +87,10 @@ class AppTextTheme {
         height: 1.6,
         letterSpacing: 0.5,
       ),
-      // not used
       titleSmall: TextStyle(
-        color: CustomColors.primary,
         fontFamily: 'Manrope',
         fontSize: 18,
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w800,
         height: 1.6,
         letterSpacing: 0.5,
       ),

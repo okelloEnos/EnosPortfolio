@@ -6,8 +6,11 @@ class ContentConstants {
   static const String github = "Github";
   static const String linkedIn = "LinkedIn";
   static const String viewResume = "View Resume";
+  static const String viewProject = "View Project";
   static const String hello = "Hello, I'm";
-  static const String name = "Enos Okello.";
+  static const String name = "Enos Okello";
+  static const String contentSeparator = "|";
+  static const String reservedRights = "All rights reserved";
   static const String tagline = "I turn complex ideas into scalable, high-performing software solutions.";
   static const String taglineDescription = "I'm a result-driven Software Engineer with 7+ years of"
       " experience in Saas, Mobile Apps, and Cloud Infrastructure. I design,"

@@ -55,8 +55,8 @@ class ProjectSection extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       width: width,
-      // color: CustomColors.brightBackground,
-      color: Colors.green,
+      color: theme.colorScheme.surface,
+      // color: Colors.green,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -130,6 +130,8 @@ class ProjectEntity {
   final String? imageAsset;
   final String? githubLink;
   final String? liveDemoLink;
+  final String? videoDemoLink;
+  final String? tag;
 
   ProjectEntity({
     this.title,
@@ -138,6 +140,8 @@ class ProjectEntity {
     this.imageAsset,
     this.githubLink,
     this.liveDemoLink,
+    this.videoDemoLink,
+    this.tag,
   });
 }
 
@@ -145,11 +149,12 @@ List<ProjectEntity> careerProjects = [
   ProjectEntity(
     title: 'Creature Codex',
     description:
-        'A mobile app that provides a comprehensive database of mythical creatures from various cultures around the world.',
+        'A mobile app that provides a comprehensive database of mythical creatures from various cultures around the world. Users can explore detailed information, images, and folklore associated with each creature.',
     techUsed: ['Flutter', 'Dart', 'Firebase'],
     imageAsset: ImageAssetConstants.creatureCodex,
     githubLink: '',
     liveDemoLink: '',
+    tag: "Mobile App",
   ),
   ProjectEntity(
     title: 'Britam Mobile App',
@@ -159,6 +164,7 @@ List<ProjectEntity> careerProjects = [
     imageAsset: ImageAssetConstants.britam,
     githubLink: '',
     liveDemoLink: '',
+    tag: "Mobile App",
   ),
   ProjectEntity(
     title: 'Personal Portfolio Website',
@@ -168,6 +174,7 @@ List<ProjectEntity> careerProjects = [
     imageAsset: ImageAssetConstants.portfolio,
     githubLink: '',
     liveDemoLink: '',
+    tag: "Web App",
   ),
   ProjectEntity(
     title: 'Pixabay Client App',
@@ -177,5 +184,6 @@ List<ProjectEntity> careerProjects = [
     imageAsset: ImageAssetConstants.pixabay,
     githubLink: '',
     liveDemoLink: '',
+    tag: "Web App",
   ),
 ];
