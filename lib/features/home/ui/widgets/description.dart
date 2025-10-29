@@ -36,7 +36,8 @@ class Description extends StatelessWidget {
           Text(ContentConstants.tagline,
             style: theme.textTheme.bodyLarge?.copyWith(
                 fontWeight: FontWeight.w700,
-                color: theme.colorScheme.onPrimary.withValues(alpha: 0.65)),
+                // color: theme.colorScheme.onPrimary.withValues(alpha: 0.65)),
+                color: theme.colorScheme.onPrimary.withOpacity(0.65)),
           ),
           const SizedBox(height: 16.0),
           Text(ContentConstants.taglineDescription,

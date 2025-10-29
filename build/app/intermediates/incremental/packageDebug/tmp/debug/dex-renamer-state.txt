@@ -1,4 +1,0 @@
-#Thu Nov 23 19:00:34 EAT 2023
-base.0=/home/okelloenos/AndroidStudioProjects/PersonalProjects/enos_portfolio/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

@@ -108,16 +108,20 @@ class _PortfolioFooterState extends State<PortfolioFooter> {
         runSpacing: 8,
         children: [
           Text('© ${DateTime.now().year} ${ContentConstants.name}', style: theme.textTheme.labelLarge?.copyWith(
-            color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)
+            // color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)
+            color: theme.colorScheme.onPrimary.withOpacity( 0.5)
           )),
           Text(ContentConstants.contentSeparator, style: theme.textTheme.labelLarge?.copyWith(
-              color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)
+              // color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)
+              color: theme.colorScheme.onPrimary.withOpacity(0.5)
           )),
           Text(ContentConstants.reservedRights, style: theme.textTheme.labelLarge?.copyWith(
-              color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)
+              // color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)
+              color: theme.colorScheme.onPrimary.withOpacity( 0.5)
           )),
           Text(ContentConstants.contentSeparator, style: theme.textTheme.labelLarge?.copyWith(
-              color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)
+              // color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)
+              color: theme.colorScheme.onPrimary.withOpacity( 0.5)
           )),
           InkWell(
             onTap: () => launchUrl(Uri.parse('tel:${MediaConstants.phone}')),
@@ -127,7 +131,8 @@ class _PortfolioFooterState extends State<PortfolioFooter> {
                 )),
           ),
           Text(ContentConstants.contentSeparator, style: theme.textTheme.labelLarge?.copyWith(
-              color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)
+              // color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)
+              color: theme.colorScheme.onPrimary.withOpacity(0.5)
           )),
           InkWell(
             onTap: () => launchUrl(Uri.parse('mailto:${MediaConstants.email}')),

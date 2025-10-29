@@ -37,7 +37,8 @@ class TechChips extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                       horizontal: 16.0, vertical: 4.0),
                   decoration: BoxDecoration(
-                    color: theme.colorScheme.primary.withValues(alpha: 0.5),
+                    // color: theme.colorScheme.primary.withValues(alpha: 0.5),
+                    color: theme.colorScheme.primary.withOpacity(0.5),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Text(
@@ -102,7 +103,8 @@ class TechChips extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
       decoration: BoxDecoration(
-        color: theme.colorScheme.primary.withValues(alpha: 0.2),
+        // color: theme.colorScheme.primary.withValues(alpha: 0.2),
+        color: theme.colorScheme.primary.withOpacity( 0.2),
         borderRadius: BorderRadius.circular(4.0),
       ),
       child: Text(
