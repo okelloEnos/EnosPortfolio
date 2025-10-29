@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import '../../../../util/breakpoints.dart';
 import '../../../../util/custom_colors.dart';
 
@@ -34,18 +32,21 @@ class SkillCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(title,
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.primary,
-                          fontSize: 16)),
+                      // style: GoogleFonts.getFont('Delius',
+                      //     color: CustomColors.primary,
+                      //     fontSize: 16)
+                  ),
                   const SizedBox(height: 8),
-                  Text("Freelancing",
-                      style: GoogleFonts.getFont('Delius',
-                          color: Colors.white, fontSize: 15)),
+                  const Text("Freelancing",
+                      // style: GoogleFonts.getFont('Delius',
+                      //     color: Colors.white, fontSize: 15)
+                  ),
                   const SizedBox(height: 10),
                   Text(description,
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 12)),
+                      // style: GoogleFonts.getFont('Delius',
+                      //     color: CustomColors.gray,
+                      //     fontSize: 12)
+                  ),
                 ],
               ),
             ),
