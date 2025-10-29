@@ -16,4 +16,9 @@ class ImageAssetConstants {
   static const String doubleArrowDown = 'assets/images/double_arrow_down.png';
   static const String doubleArrowUp = 'assets/images/double_arrow_up.png';
   static const String addressBook = 'assets/images/address_book.png';
+  static const String creatureCodex = 'assets/images/creature_codex.png';
+  static const String britam = 'assets/images/britam.png';
+  static const String portfolio = 'assets/images/portfolio.png';
+  static const String pixabay = 'assets/images/pixabay.png';
+
 }

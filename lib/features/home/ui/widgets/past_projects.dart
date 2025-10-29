@@ -1,4 +1,5 @@
 import 'package:enos_portfolio/features/home/ui/widgets/project_card.dart';
+import 'package:enos_portfolio/features/home/ui/widgets/project_section.dart';
 import 'package:flutter/material.dart';
 
 class PastProjectsSection extends StatelessWidget {
@@ -12,9 +13,10 @@ class PastProjectsSection extends StatelessWidget {
               height: 24.0,
             ),
       shrinkWrap: true,
-        itemCount: 5,
+        itemCount: careerProjects.length,
         itemBuilder: (context, index) {
-      return const ProjectCard();
+        ProjectEntity project = careerProjects[index];
+      return ProjectCard(project: project);
     });
   }
 }
