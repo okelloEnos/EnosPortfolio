@@ -37,7 +37,8 @@ class ProjectCard extends StatelessWidget {
                 Text(project.tag ?? '',
                   style: theme.textTheme.labelSmall?.copyWith(
                       fontWeight: FontWeight.w500,
-                      color: theme.colorScheme.onPrimary.withValues(alpha: 0.65)),
+                      // color: theme.colorScheme.onPrimary.withValues(alpha: 0.65)),
+                      color: theme.colorScheme.onPrimary.withOpacity( 0.65)),
                 ),
                 Text(project.title ?? '',
                   style: theme.textTheme.titleSmall,
@@ -58,7 +59,8 @@ class ProjectCard extends StatelessWidget {
                     padding:
                     const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
                     decoration: BoxDecoration(
-                      color: theme.colorScheme.onPrimary.withValues(alpha: 0.1),
+                      // color: theme.colorScheme.onPrimary.withValues(alpha: 0.1),
+                      color: theme.colorScheme.onPrimary.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Row(

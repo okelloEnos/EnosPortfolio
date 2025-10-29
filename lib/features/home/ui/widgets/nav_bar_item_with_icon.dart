@@ -19,13 +19,21 @@ class NavBarItemWithIcon extends StatelessWidget {
 
     return ElevatedButton.icon(
       style: ButtonStyle(
-        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+        // shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+        //   RoundedRectangleBorder(
+        //     borderRadius: BorderRadius.circular(8.0),
+        //   ),
+        // ),
+        // elevation: WidgetStateProperty.all<double>(0),
+        // backgroundColor: WidgetStateProperty.all<Color>(
+        //     theme.colorScheme.surface),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
-        elevation: WidgetStateProperty.all<double>(0),
-        backgroundColor: WidgetStateProperty.all<Color>(
+        elevation: MaterialStateProperty.all<double>(0),
+        backgroundColor: MaterialStateProperty.all<Color>(
             theme.colorScheme.surface),
       ),
       icon: SvgPicture.asset(icon,

@@ -47,7 +47,9 @@ class _AnimatedDownArrowState extends State<AnimatedDownArrow>
         );
       },
       child: IconButton(
-        icon: Image.asset(ImageAssetConstants.doubleArrowDown, width: 24, height: 24, color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)),
+        icon: Image.asset(ImageAssetConstants.doubleArrowDown, width: 24, height: 24,
+            // color: theme.colorScheme.onPrimary.withValues(alpha: 0.5)),
+            color: theme.colorScheme.onPrimary.withOpacity(0.5)),
         // icon: const Icon(
         //   Icons.keyboard_arrow_down_rounded,
         //   size: 40,

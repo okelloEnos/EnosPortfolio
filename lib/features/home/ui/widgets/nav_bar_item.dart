@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../util/custom_colors.dart';
-
 class NavBarItem extends StatelessWidget {
   final String text;
   final Function onTap;
@@ -25,7 +23,8 @@ class NavBarItem extends StatelessWidget {
       },
       child: ObxValue<RxBool>((data) {
         return InkWell(
-          splashColor: theme.colorScheme.primary.withValues(alpha: 0.4),
+          // splashColor: theme.colorScheme.primary.withValues(alpha: 0.4),
+          splashColor: theme.colorScheme.primary.withOpacity(0.4),
           onTap: () => onTap(),
           child: Container(
             height: 35.0,
