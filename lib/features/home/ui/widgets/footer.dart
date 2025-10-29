@@ -2,8 +2,6 @@ import 'package:enos_portfolio/features/home/ui/widgets/nav_bar_item_with_icon.d
 import 'package:enos_portfolio/util/content_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import '../../../../util/breakpoints.dart';
 import '../../../../util/custom_colors.dart';
 import '../../../../util/image_asset_constants.dart';
@@ -12,64 +10,64 @@ import 'logo.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Footer extends StatelessWidget {
-  final double width;
-  final ScrollController scrollController;
-  const Footer({required this.width,required this.scrollController, Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Container(
-        color: CustomColors.darkBackground,
-        padding: const EdgeInsets.symmetric(vertical: 20),
-        width: width,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-             Logo(width: width, scrollController: scrollController,),
-             const SizedBox(height:22),
-          width > Breakpoints.sm
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                   Text('Copyright © 2023 okello-enos-dev',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                  Text('All rights reserved',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                  Text('enosokello@gmail.com',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                ],
-              )
-            : Column(
-                children: [
-                  Text('Copyright © 2023 okello-enos-dev',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                          const SizedBox(height: 10),
-                          Text(' All rights reserved',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                  const SizedBox(height: 10),
-                  Text('enosokello@gmail.com',
-                      style: GoogleFonts.getFont('Delius',
-                          color: CustomColors.gray,
-                          fontSize: 14)),
-                ],
-              ),
-             
-        ],)
-              );
-  }
-}
+// class Footer extends StatelessWidget {
+//   final double width;
+//   final ScrollController scrollController;
+//   const Footer({required this.width,required this.scrollController, Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//
+//     return Container(
+//         color: CustomColors.darkBackground,
+//         padding: const EdgeInsets.symmetric(vertical: 20),
+//         width: width,
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.center,
+//           children: [
+//              Logo(width: width, scrollController: scrollController,),
+//              const SizedBox(height:22),
+//           width > Breakpoints.sm
+//             ? Row(
+//                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                 children: [
+//                    Text('Copyright © 2023 okello-enos-dev',
+//                       style: GoogleFonts.getFont('Delius',
+//                           color: CustomColors.gray,
+//                           fontSize: 14)),
+//                   Text('All rights reserved',
+//                       style: GoogleFonts.getFont('Delius',
+//                           color: CustomColors.gray,
+//                           fontSize: 14)),
+//                   Text('enosokello@gmail.com',
+//                       style: GoogleFonts.getFont('Delius',
+//                           color: CustomColors.gray,
+//                           fontSize: 14)),
+//                 ],
+//               )
+//             : Column(
+//                 children: [
+//                   Text('Copyright © 2023 okello-enos-dev',
+//                       style: GoogleFonts.getFont('Delius',
+//                           color: CustomColors.gray,
+//                           fontSize: 14)),
+//                           const SizedBox(height: 10),
+//                           Text(' All rights reserved',
+//                       style: GoogleFonts.getFont('Delius',
+//                           color: CustomColors.gray,
+//                           fontSize: 14)),
+//                   const SizedBox(height: 10),
+//                   Text('enosokello@gmail.com',
+//                       style: GoogleFonts.getFont('Delius',
+//                           color: CustomColors.gray,
+//                           fontSize: 14)),
+//                 ],
+//               ),
+//
+//         ],)
+//               );
+//   }
+// }
 
 class PortfolioFooter extends StatefulWidget {
   final double width;
